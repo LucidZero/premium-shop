@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Playfair Display', sans-serif;
+    text-align: center;
+    position: fixed;
+  }
+  
+  .background-image {
+    background-image: url('/home/lucid/repos/premium-shop/src/images/shopBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150vh;
+  }
+  
+  h1 {
+    font-size: 64px;
+    font-weight: normal;
+    color: #000;
+    margin-top: 10vh;
+  }
+  
+  #visitShop {
+    display: inline-block; /* Set display to inline-block */
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    margin-top: 20vh;
+    background-color: black;
+    padding: 10px 20px;
+  }
+  
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 40px;
+    }
+    #visitShop {
+      font-size: 24px;
+    }
+  }
+  

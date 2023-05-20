@@ -1,0 +1,43 @@
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: center; /* Add this line to horizontally center the Navbar */
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 32px;
+    width: 67.7%;
+    margin: 0 auto; /* Add this line to center the Navbar horizontally */
+    padding-top: 1vh;
+  }
+
+  
+.navbar-links {
+    display: flex;
+    justify-self: end;
+    gap: 2vw;
+    grid-auto-rows: min-content;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  @media (max-width: 900px) {
+    .navbar-links {
+      flex-direction: column; /* Change the flex direction to column */
+      align-items: flex-end; /* Align items to the start of the container */
+      gap: 10px; /* Adjust the gap between links as desired */
+      font-size: 80%;
+    }
+  }
+
+  
+  @media (max-width: 768px) {
+    /* Adjust the logo size for screens with a maximum width of 768px */
+    .logo {
+      width: 90%;
+      min-width: 150px;
+    }
+  }
+  
