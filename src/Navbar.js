@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from '/home/lucid/repos/premium-shop/src/image
 import { ReactComponent as ShoppingBag} from '/home/lucid/repos/premium-shop/src/images/shoppingBag.svg';
 import './Navbar.css'; // Add the CSS file for Navbar styles
 import './fonts.css'; // Add the CSS file for fonts
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -11,10 +12,10 @@ function Navbar() {
         <Logo className="logo" />
       </div>
       <div className="navbar-links">
-        <a href="/">Home</a>
-        <a href="/shop">Shop</a>
-        <a href="/faq">FAQ</a>
-        <a href="/cart"><ShoppingBag className="cart-icon" /></a>
+        <Link to="/">Home</Link>
+        <Link to="/shop">Shop</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/cart"><ShoppingBag className="cart-icon" /></Link>
       </div>
     </div>
   );

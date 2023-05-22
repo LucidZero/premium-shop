@@ -1,0 +1,28 @@
+.product-card {
+    position: relative; /* Enable absolute positioning for child elements */
+  }
+  
+  .product-image {
+    width: 100%;
+    min-width: 80%;
+    aspect-ratio: 1/1;
+  }
+  a:link{
+    text-decoration: none!important;
+  }
+  .product-name {
+    font-size: 32px;
+    font-weight: normal;
+    margin-top: 22px;
+    margin-bottom: 53px;
+    word-wrap: break-word;
+    text-decoration: none;
+    color: #000;
+  }
+
+
+@media (max-width: 500px) {
+    .product-name {
+        font-size: 32px;
+    }
+  }
