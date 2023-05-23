@@ -1,1 +1,0 @@
-//on waiting list button click open popup window to apply for it

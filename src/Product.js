@@ -1,6 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import data from './productData.json';
+import Navbar from "./Navbar";
+import WaitingListButton from "./WaitingListButton.js";
+import './Product.css';
+import AddToCart from "./AddToCart.js";
 
 const Product = () => {
   const { id } = useParams();
@@ -13,11 +17,34 @@ const Product = () => {
   }
 
   return (
-    <div>
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>{product.extendedDescription}</p>
-      {/* Add more product details as needed */}
+    <div className='productBody'>
+      <Navbar />
+      <div className='productBlock'>
+
+        <img className="productImageOne" src={require(`./images/productImages/${product.id}.jpg`)} alt={product.name} />
+        <div className='productInfo'>
+          <h1>{product.name}</h1>
+
+          <div className='productDescription'>
+            <h2>{product.first_title}</h2>
+            <p>{product.description}</p>
+          </div>
+
+          {product.waiting_list ? (<WaitingListButton className='waitingButton'/>) : (<AddToCart />)}
+        </div>
+      </div>
+
+      <div className='productBlock'>
+
+        <div className='extendedProductInfo'>
+          <h2>{product.second_title}</h2>
+          <p>{product.extended_description}</p>
+        </div>
+
+        <img className="productImageTwo" src={require(`./images/productImages/${product.id}-2.jpg`)} alt={product.name} />
+      
+      </div>
+      <div className='bottomButton'> {product.waiting_list && <WaitingListButton />} </div>
     </div>
   );
 };

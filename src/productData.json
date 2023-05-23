@@ -5,8 +5,12 @@
         "first_title": "Unleash Your Artistic Mastery",
         "description": "Experience the pinnacle of calligraphic excellence with our premium pens. Crafted with precision and passion, each pen embodies the perfect balance of elegance and performance. Elevate your artistry and unlock a world of creative possibilities with our exceptional collection.",
         "second_title": "Introducing our Exquisite Masterpiece: The Epitome of Calligraphy Elegance",
-        "extended_description": "Experience the epitome of luxury and craftsmanship with our extraordinary collection of premium calligraphy pens. Meticulously crafted with the utmost precision and using only the finest materials, our pens redefine excellence in the art of writing. Each stroke effortlessly glides across the page, delivering unparalleled smoothness and precision.\n\nUnleash your creative genius with our exclusive line of super-pricy calligraphy pens, meticulously designed for the discerning calligrapher who demands nothing but perfection. Hand-selected exotic woods, precious metals, and exquisite detailing come together in harmonious symphony, creating a masterpiece that transcends time.\n\nIndulge in the weight of perfection as you hold our pens, marveling at their balance and ergonomic design. Our pens are not mere writing instruments; they are an extension of your artistic soul, empowering you to create calligraphy masterpieces that leave a lasting impression.\n\nEach pen is a testament to uncompromising quality and unparalleled performance. Immerse yourself in the opulence of flawless nibs, delicately handcrafted to deliver the finest lines and strokes. The ink flows effortlessly, dancing across the page with grace and elegance, ensuring every word is a work of art.\n\nDiscover the epitome of calligraphy luxury, where precision meets extravagance. Elevate your calligraphy journey with our exclusive range of premium, high-quality, and super pricy calligraphy pens, the ultimate symbol of prestige and refinement.",
-        "id": 1
+        "extended_description": "Experience the epitome of luxury and craftsmanship with our extraordinary collection of premium calligraphy pens. Meticulously crafted with the utmost precision and using only the finest materials, our pens redefine excellence in the art of writing. Each stroke effortlessly glides across the page, delivering unparalleled smoothness and precision.\n\nUnleash your creative genius with our exclusive line of super-pricy calligraphy pens, meticulously designed for the discerning calligrapher who demands nothing but perfection. Hand-selected exotic woods, precious metals, and exquisite detailing come together in harmonious symphony, creating a masterpiece that transcends time.\n\nIndulge in the weight of perfection as you hold our pens, marveling at their balance and ergonomic design. Our pens are not mere writing instruments; they are an extension of your artistic soul, empowering you to create calligraphy masterpieces that leave a lasting impression.\n\nEach pen is a testament to uncompromising quality and unparalleled performance. Immerse yourself in the opulence of flawless nibs, delicately handcrafted to deliver the finest lines and strokes. The ink flows effortlessly, dancing across the page with grace and elegance, ensuring every word is a work of art.\n\nDiscover the epitome of calligraphy luxury, where precision meets extravagance. Elevate your calligraphy journey with our exclusive range of premium, high-quality, and super pricy calligraphy pens, the ultimate symbol of prestige and refinement."
+        ,
+        "id": 1,
+        "waiting_list": true,
+        "price": 1899,
+        "currency": "euro"
       },
       {
         "name": "Brush Pen Set",
@@ -14,14 +18,21 @@
         "description": "Discover the joy of brush lettering with our versatile brush pen set. Whether you're a beginner or a seasoned artist, our pens offer smooth and controlled strokes that bring your lettering to life. Dive into the world of expressive calligraphy and create stunning pieces of art.",
         "second_title": "Unleash Your Creativity with Precision and Flexibility",
         "extended_description": "Unleash your creativity and explore the art of brush lettering with our comprehensive brush pen set. Each pen in our collection is meticulously designed to provide precision and flexibility, allowing you to create beautiful letter forms with ease.\n\nExperience the perfect balance of control and fluidity as the ink effortlessly glides across the page. The fine tip enables intricate details, while the flexible brush tip lets you achieve bold strokes and delicate transitions.\n\nWhether you're a professional calligrapher or a passionate hobbyist, our brush pen set is the perfect companion for your artistic journey. Elevate your lettering projects, greeting cards, and art pieces to new heights with the endless possibilities of brush lettering.",
-        "id": 2
-      },    {
+        "id": 2,
+        "waiting_list": false,
+        "price": 1199,
+        "currency": "euro"
+      },    
+      {
         "name": "Ink Set",
         "first_title": "Unleash the Power of Vibrant Colors",
         "description": "Immerse yourself in a world of vibrant colors with our premium ink set. Each bottle is carefully crafted to deliver rich and intense pigments that add life and depth to your calligraphy. Let your creativity flow as you explore the endless combinations and effects.",
         "second_title": "Indulge in a Spectrum of Creative Possibilities",
         "extended_description": "Unleash your imagination and dive into a world of vibrant colors with our exquisite ink set. Crafted with the utmost care, our inks deliver unparalleled depth and richness, adding a new dimension to your calligraphy.\n\nImmerse yourself in a spectrum of creative possibilities as you mix and blend the colors to create unique shades and effects. The smooth flow of ink ensures effortless writing, allowing you to focus on your artistic expression.\n\nWhether you're writing invitations, creating artwork, or simply enjoying the meditative practice of calligraphy, our ink set is an essential tool for every calligrapher seeking to add a touch of brilliance to their creations.",
-        "id": 3
+        "id": 3,
+        "waiting_list": false,
+        "price": 399,
+        "currency": "euro"
       },
       {
         "name": "Calligraphy Paper Pad",
@@ -29,7 +40,10 @@
         "description": "Experience the joy of calligraphy on our premium paper pad. Each sheet is designed to provide the ideal surface for your pen, ensuring smooth and precise strokes. Elevate your calligraphy practice and bring your artistic vision to life.",
         "second_title": "Unleash Your Creativity on the Perfect Canvas",
         "extended_description": "Let your creativity flow on our specially crafted calligraphy paper pad. Designed to meet the needs of calligraphers, each sheet offers the perfect combination of smoothness and ink absorption.\n\nImmerse yourself in the world of calligraphy as your pen effortlessly glides across the surface, creating elegant and defined strokes. The lightweight and durable paper allow you to practice with ease and showcase your skills.\n\nWhether you're a beginner or an experienced calligrapher, our paper pad provides the ideal canvas for your artistic expressions, allowing you to refine your technique and unleash your creativity.",
-        "id": 4
+        "id": 4,
+        "waiting_list": false,
+        "price": 789,
+        "currency": "euro"
       }
     ]
   }

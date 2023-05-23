@@ -16,7 +16,7 @@
     overflow-x: hidden;
   }
   
-  h1 {
+  .content > h1 {
     font-size: 64px;
     font-weight: normal;
     color: #000;
@@ -24,15 +24,16 @@
   }
   
   #visitShop {
-    display: inline-block; /* Set display to inline-block */
+    display: inline-block;
     font-size: 32px;
     color: rgb(255, 255, 255);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration: underline !important; /* Add !important declaration */
+    text-decoration-thickness: 1px !important;
     margin-top: 20vh;
     background-color: black;
     padding: 10px 20px;
   }
+  
   
   @media (max-width: 900px) {
     h1 {
