@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import './HomePage.css';
 
+
 const HomePage = () => {
   return (
     <div className="home-page">

@@ -30,7 +30,13 @@ const Product = () => {
             <p>{product.description}</p>
           </div>
 
-          {product.waiting_list ? (<WaitingListButton className='waitingButton'/>) : (<AddToCart />)}
+      {product.waiting_list ? (
+  <WaitingListButton className='waitingButton' product={product} />
+) : (
+  <AddToCart />
+)}
+
+
         </div>
       </div>
 
