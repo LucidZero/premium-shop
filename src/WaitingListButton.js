@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ReactComponent as Logo } from './images/logo.svg';
 import './WaitingList.css';
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
 
 export const WaitingListButton = ({ className, onClick, product }) => {
-  const productObject = product ? product : null;
+  const productObject = product ? product : null; // Assign product to productObject if it has a value, otherwise assign null
 
   const handleClick = () => {
     if (onClick) {
@@ -19,11 +19,12 @@ export const WaitingListButton = ({ className, onClick, product }) => {
   );
 };
 
-
-const WaitingListPopup = ({ onClose, productObject }) => {
+const WaitingListPopup = ({ onClose, product }) => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showRequirements, setShowRequirements] = useState(false); // Track whether to show email requirements
+  const [isPending, setIsPending] = useState(false);
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const handleBackgroundClick = () => {
     onClose();
@@ -40,40 +41,38 @@ const WaitingListPopup = ({ onClose, productObject }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
+
     if (!emailRegex.test(email)) {
       if (!showRequirements) {
         setShowRequirements(true);
       }
       return;
     }
-  
+
     try {
-      const recipientName = email.split("@")[0];
+      setIsPending(true); // Show pending state
+
+      const recipientName = email.split('@')[0];
 
       const templateParams = {
         email_to: email,
         recipientName: recipientName,
-        productName: productObject.name,
-        itemID: productObject.id,
+        productName: product.name,
+        itemID: product.id,
       };
-      
-      console.log('Product Name:', productObject.name);
-      console.log('Item ID:', productObject.id);
-  
+
       await emailjs.send('service_x5shc7a', 'template_uqz7mhb', templateParams, 'TBi1eTUR4OmcFbrD0');
-      onClose();
-    console.log('Recipient Name:', templateParams.recipientName);
+
+      setIsEmailSent(true); // Email sent successfully
     } catch (error) {
       console.error('Error sending email:', error);
       setErrorMessage('Oops! Something went wrong with the server. Please try again later.');
+    } finally {
+      setIsPending(false); // Clear pending state
     }
   };
-  
-  
-  
 
   const emailRequirements =
     'Email requirements:\n' +
@@ -88,10 +87,11 @@ const WaitingListPopup = ({ onClose, productObject }) => {
           X
         </div>
         <Logo />
-        <form onSubmit={(event) => handleSubmit(event, productObject)}>
-
-        {showRequirements && !errorMessage && <div className="email-requirements">{emailRequirements}</div>}
-  {errorMessage && <div className="error-message">{errorMessage}</div>}
+        <form onSubmit={handleSubmit}>
+          {showRequirements && !errorMessage && <div className="email-requirements">{emailRequirements}</div>}
+          {errorMessage && !isPending && !isEmailSent && <div className="error-message">{errorMessage}</div>}
+          {isPending && !isEmailSent && <div className="pending-message">Sending email...</div>}
+          {isEmailSent && !isPending && <div className="success-message">Email successfully sent!</div>}
           <input
             className="email-input-field"
             type="text"
@@ -99,10 +99,9 @@ const WaitingListPopup = ({ onClose, productObject }) => {
             value={email}
             onChange={handleEmailChange}
           />
-        <button type="submit" className="submit-button-waiting-list">
-          Submit
-        </button>
-
+          <button type="submit" className="submit-button-waiting-list" disabled={isPending || isEmailSent}>
+            Submit
+          </button>
         </form>
       </div>
     </div>
@@ -125,7 +124,7 @@ const PopUpWindow = ({ product }) => {
   return (
     <div>
       <WaitingListButton onClick={() => handleOpenPopup(product)} product={selectedProduct} />
-      {isPopupOpen && <WaitingListPopup onClose={handleClosePopup} productObject={selectedProduct} />}
+      {isPopupOpen && <WaitingListPopup onClose={handleClosePopup} product={selectedProduct} />}
     </div>
   );
 };
