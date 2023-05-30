@@ -1,25 +1,31 @@
 import React, { useState } from 'react';
 
 const QuantityControl = ({ quantity, onDecrease, onIncrease }) => {
-  const [editableQuantity, setEditableQuantity] = useState(quantity);
+  const [editableQuantity, setEditableQuantity] = useState(String(quantity));
 
   const handleQuantityChange = (event) => {
-    const newQuantity = parseInt(event.target.value);
+    const newQuantity = event.target.value.replace(/\D/g, ''); // Remove non-digit characters
     setEditableQuantity(newQuantity);
   };
 
   const handleBlur = () => {
     // Update the quantity when the input loses focus
-    const newQuantity = isNaN(editableQuantity) ? quantity : editableQuantity;
+    const newQuantity = editableQuantity === '' ? '1' : editableQuantity && editableQuantity.replace(/^0+/, '');
     setEditableQuantity(newQuantity);
   };
 
   const handleDecrease = () => {
-    setEditableQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
+    setEditableQuantity((prevQuantity) => {
+      const parsedQuantity = parseInt(prevQuantity);
+      return String(Math.max(1, parsedQuantity - 1));
+    });
   };
 
   const handleIncrease = () => {
-    setEditableQuantity((prevQuantity) => prevQuantity + 1);
+    setEditableQuantity((prevQuantity) => {
+      const parsedQuantity = parseInt(prevQuantity);
+      return String(parsedQuantity + 1);
+    });
   };
 
   return (
