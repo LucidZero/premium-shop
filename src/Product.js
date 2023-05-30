@@ -5,6 +5,9 @@ import Navbar from "./Navbar";
 import WaitingListButton from "./WaitingListButton.js";
 import './Product.css';
 import AddToCart from "./AddToCart.js";
+import PageNotFound from "./PageNotFound.js";
+
+
 
 const Product = () => {
   const { id } = useParams();
@@ -13,7 +16,7 @@ const Product = () => {
   const product = data.products.find((product) => product.id === parseInt(id));
 
   if (!product) {
-    return <div>Product not found</div>;
+    return (<PageNotFound />);
   }
 
   return (
@@ -29,7 +32,11 @@ const Product = () => {
             <h2>{product.first_title}</h2>
             <p>{product.description}</p>
           </div>
-
+          {!product.waiting_list && (
+            <div className='price-and-currency'>
+              <p>Price: {product.price} {product.currency}</p>
+            </div>
+          )}
       {product.waiting_list ? (
   <WaitingListButton className='waitingButton' product={product} />
 ) : (
