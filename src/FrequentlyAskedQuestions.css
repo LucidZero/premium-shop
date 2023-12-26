@@ -16,12 +16,12 @@
     padding-bottom: 3vh;
 }
 
-li{
+.a-box ul li{
     margin-top: 10px;
     position: relative;
     z-index: 6;
 }
-p{
+.a-box ul li p{
     width:70vw;
     position: relative;
     z-index: 6;
