@@ -1,15 +1,10 @@
-import Navbar from "./Navbar";
-
-
+import './Cart.css';
+import Navbar from './Navbar';
 const Cart = () => {
-  return (
-    <div className="cart-page">
+  return (     <div>
+    <Navbar />
 
-          <Navbar />
-
-    </div>
-
-  );
+  </div> );
 }
 
 export default Cart;
