@@ -56,6 +56,10 @@ p{
 .bottomButton{
     padding-bottom: 5%;
 }
+.oneBlock .waitingListButton{
+    padding: 1vw 2vw;
+    font-size: 2.3vw;
+}
 @media (max-width: 1650px) {
     .waitingButton{
         font-size: 1.6em;
