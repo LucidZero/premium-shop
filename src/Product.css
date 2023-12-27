@@ -54,7 +54,7 @@ p{
     grid-template-columns: repeat(2, 1fr);
 }
 .bottomButton{
-    padding-bottom: 5%;
+    padding-bottom: 2vh;
     min-width: 30vw;
 }
 .oneBlock .waitingListButton{
