@@ -9,15 +9,21 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Shop" element={<Shop />} />
-        <Route path="/FrequentlyAskedQuestions" element={<FrequentlyAskedQuestions />} />
-        <Route path="/Cart" element={<Cart />} />
-        <Route path="/Shop/:id" element={<Product />} />
-      </Routes>
+      <div>
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Shop" element={<Shop />} />
+          <Route path="/FrequentlyAskedQuestions" element={<FrequentlyAskedQuestions />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Shop/:id" element={<Product />} />
+        </Routes>
+
+      </div>
     </Router>
+    
   );
 }
 
 export default App;
+

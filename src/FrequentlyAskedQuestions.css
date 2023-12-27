@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+  }
 .background-image-faq {
     background-image: url('./images/faqBackground.png');
     background-size: cover;
@@ -36,4 +39,8 @@
     margin-left: 12.5vw;
     background-attachment: scroll;
     min-height: 100vh;
+}
+.background-image-faq footer{
+    z-index: 6; 
+    position: relative;
 }

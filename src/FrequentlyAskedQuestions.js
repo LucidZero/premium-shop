@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import './FrequentlyAskedQuestions.css';
+import Footer from './Footer.js'; 
 
 const FrequentlyAskedQuestions = () => {
   return (
@@ -13,6 +14,7 @@ const FrequentlyAskedQuestions = () => {
 <li>What is your return policy? We want you to be completely satisfied with your purchase. If you receive a damaged or incorrect item, please contact our customer support within [insert number of days] days of receiving the order. For detailed information about our return policy, please refer to our [insert link to return policy page].</li> <li>Do you offer custom calligraphy services? Yes, we offer custom calligraphy services for personalized artwork, invitations, or special projects. Please visit our [insert link to custom calligraphy page] to learn more about our offerings and how to request a custom order.</li> <li>Can I cancel or modify my order? We strive to process orders quickly, but if you need to cancel or modify your order, please reach out to our customer support as soon as possible. We'll do our best to accommodate your request, depending on the status of your order.</li> </ul> <p>If you have any other questions or need further assistance, please don't hesitate to contact our friendly customer support team at [insert contact information]. We're here to help!</p> </div>
             </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import './Shop.css';
 import { ReactComponent as ShopLogo } from '/home/lucid/repos/premium-shop/src/images/shop.svg';
 import ProductShowcase from "./ProductShowcase";
+import Footer from './Footer.js'; 
 
 const Shop = () => {
   return (
@@ -12,6 +13,7 @@ const Shop = () => {
         <ShopLogo className="shop-logo" />
       </div>
         <ProductShowcase className="product-showcase"/>
+        <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import data from './productData.json';
 import Navbar from "./Navbar";
 import WaitingListButton from "./WaitingListButton.js";
 import './Product.css';
+import Footer from './Footer.js'
 import AddToCart from "./AddToCart.js";
 
 const Product = () => {
@@ -51,6 +52,7 @@ const Product = () => {
       
       </div>
       <div className='bottomButton'> {product.waiting_list && <WaitingListButton />} </div>
+      <Footer />
     </div>
   );
 };
