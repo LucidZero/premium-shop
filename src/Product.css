@@ -55,7 +55,7 @@ p{
 }
 .bottomButton{
     padding-bottom: 2vh;
-    min-width: 30vw;
+    min-width: 1px;
 }
 .oneBlock .waitingListButton{
     padding: 1vw 2vw;
