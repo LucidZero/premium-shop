@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './QuantityControl.css';
 
 const QuantityControl = ({ quantity, onDecrease, onIncrease }) => {
   const [editableQuantity, setEditableQuantity] = useState(String(quantity));
