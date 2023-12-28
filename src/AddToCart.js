@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import './AddToCart.css';
 import QuantityControl from './QuantityControl';
-
+import ProductPrice from './ProductPrice';
+import { useParams } from 'react-router-dom';
 const AddToCart = ({ className }) => {
+
+  const { id } = useParams();
+  console.log('ProductId:', id);
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -15,7 +19,10 @@ const AddToCart = ({ className }) => {
 
   return (
     <div className={`addToCartButton ${className}`}>
-      <QuantityControl quantity={quantity} onDecrease={handleDecrease} onIncrease={handleIncrease} />
+      <div className="priceAboveQuantity">
+        <ProductPrice productId={id} />
+        <QuantityControl quantity={quantity} onDecrease={handleDecrease} onIncrease={handleIncrease} />
+      </div>
       <button className="addToCartButton">Add to cart</button>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import './ProductInCart.css';
 import data from './productData.json';
 import QuantityControl from './QuantityControl';
+import ProductPrice from './ProductPrice';
 
 const ProductInCart = () => {
   const products = data.products;
@@ -16,7 +17,8 @@ const ProductInCart = () => {
             className="card-image"
           />
           <h2 className="product-name">{product.name}</h2>
-         
+        <QuantityControl />
+        <ProductPrice />
         </div>
 
             
