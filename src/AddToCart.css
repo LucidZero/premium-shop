@@ -52,4 +52,11 @@
       align-items: flex-start;
     }
   }
+  .amount{
+    margin: 0 5px 0 0;
+  }
+  .quantityControlWithAmount{
+    display: flex;
+    flex-wrap: wrap;
+  }
   

@@ -25,7 +25,7 @@
     gap: 20px; /* Add a gap between grid items */
     width: 67.7%;
     margin: 0 auto;
-    margin-top: 170px;
+    margin-top: 10vh
 }
 
 @media (max-width: 768px) {

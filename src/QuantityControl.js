@@ -28,23 +28,25 @@ const QuantityControl = ({ quantity, onDecrease, onIncrease }) => {
     });
   };
 
-  return (
-    <div className="quantityControl">
-      <button onClick={handleDecrease}>-</button>
-      <input
-        type="text"
-        style={{
-          width: '40px',
-          textAlign: 'center',
-          border: 'none',
-          background: 'transparent',
-          appearance: 'textfield',
-        }}
-        value={editableQuantity}
-        onChange={handleQuantityChange}
-        onBlur={handleBlur}
-      />
-      <button onClick={handleIncrease}>+</button>
+  return (<div className="quantityControlWithAmount">
+    <p className='amount'>Amount: </p>
+      <div className="quantityControl">
+        <button onClick={handleDecrease}>-</button>
+        <input
+          type="text"
+          style={{
+            width: '40px',
+            textAlign: 'center',
+            border: 'none',
+            background: 'transparent',
+            appearance: 'textfield',
+          }}
+          value={editableQuantity}
+          onChange={handleQuantityChange}
+          onBlur={handleBlur}
+        />
+        <button onClick={handleIncrease}>+</button>
+      </div>
     </div>
   );
 };

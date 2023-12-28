@@ -1,25 +1,28 @@
 import React from 'react';
-import './ProductShowcase.css';
+import './ProductInCart.css';
 import data from './productData.json';
-import { Link } from 'react-router-dom';
+import QuantityControl from './QuantityControl';
 
-const ProductShowcase = () => {
+const ProductInCart = () => {
   const products = data.products;
 
   return (
-    <div className="product-showcase">
+    <div className="product-in-cart">
       {products.map((product) => (
-        <Link key={product.id} to={`/shop/${product.id}`} className="product-card">
-          <img
+        <div className="product-card">
+            <img
             src={require(`./images/productImages/${product.id}.jpg`)}
             alt={product.name}
-            className="product-image"
+            className="card-image"
           />
           <h2 className="product-name">{product.name}</h2>
-        </Link>
+         
+        </div>
+
+            
       ))}
     </div>
   );
 };
 
-export default ProductShowcase;
+export default ProductInCart;
