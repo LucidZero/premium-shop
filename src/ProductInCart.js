@@ -9,6 +9,7 @@ const ProductInCart = () => {
   const products = data.products;
   const [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || []);
   const [total, setTotal] = useState(0);
+  const [checkoutStatus, setCheckoutStatus] = useState('Checkout');
 
   useEffect(() => {
     // Update cartData whenever localStorage changes
@@ -34,6 +35,16 @@ const ProductInCart = () => {
     );
     setCartData(newCartData);
     localStorage.setItem('cartData', JSON.stringify(newCartData));
+  };
+
+  const handleCheckout = () => {
+    setCheckoutStatus('Processing...');
+    setTimeout(() => {
+      setCheckoutStatus('Failed');
+      setTimeout(() => {
+        setCheckoutStatus('Checkout');
+      }, 5000);
+    }, 3000);
   };
 
   return (
@@ -65,7 +76,7 @@ const ProductInCart = () => {
         <div className="checkout-amount">
           <p>Total</p> <p>{total} euro</p>
         </div>
-        <button className="checkout-button">Checkout</button>
+        <button className="checkout-button" onClick={handleCheckout}>{checkoutStatus}</button>
       </div>
     </div>
   );
