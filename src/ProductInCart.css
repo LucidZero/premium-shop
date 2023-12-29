@@ -59,9 +59,38 @@
     display: flex;
     align-items: center;
     margin: 3vh auto;
+    justify-content: center;
   }
 
 .quantityControlWithAmount{
     align-items: center;
 }
-  
+
+.checkout{
+    height: 14vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 1vw 1vw;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    z-index: 6;
+    position: fixed;
+    right: 10%;
+    bottom: 8%;
+}
+@media (max-width: 1233px) {
+  .checkout {
+    right: 1%;
+  }
+}
+
+.checkout p{
+
+}
+.checkout-button{
+background-color: orange;
+border: none;
+font-size: 3em;
+height: 4em;
+}

@@ -37,9 +37,12 @@ const ProductInCart = () => {
                         <ProductPrice />
                     </div>
                 </div>
-            //Right side, check out
-                
+            //Checkout
         ))}
+        </div>
+        <div className="checkout">
+          <p>Total</p>
+          <button className="checkout-button">Checkout</button>
         </div>
     </div>
   );
