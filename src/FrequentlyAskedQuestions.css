@@ -47,3 +47,13 @@ body{
 .faq-page{
     min-height: 95vh;
 }
+.a-box{
+    font-size: 1.4em;
+    text-align: center;
+}
+.a-box h2{
+    font-size: 1.8em;
+}
+.a-box ul{
+    text-align: left;
+}
