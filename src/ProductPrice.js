@@ -6,8 +6,6 @@ const ProductPrice = ({ productId }) => {
     // Find the product with the matching ID
     const selectedProduct = data.products.find(product => product.id == productId);
 
-
-    console.log(selectedProduct);
     // Check if the product with the given ID exists
     if (!selectedProduct) {
         return <div className="product-price">Product not found</div>;

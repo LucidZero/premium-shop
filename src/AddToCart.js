@@ -3,27 +3,41 @@ import './AddToCart.css';
 import QuantityControl from './QuantityControl';
 import ProductPrice from './ProductPrice';
 import { useParams } from 'react-router-dom';
-const AddToCart = ({ className }) => {
 
+const AddToCart = ({ className }) => {
   const { id } = useParams();
-  console.log('ProductId:', id);
   const [quantity, setQuantity] = useState(1);
 
-  const handleDecrease = () => {
-    setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(parseInt(newQuantity));
   };
 
-  const handleIncrease = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+  const handleAddToCart = () => {
+    // Get the current cart data from localStorage
+    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+
+    // Check if the product already exists in the cart
+    const existingProductIndex = cartData.findIndex((product) => product.id === id);
+
+    if (existingProductIndex !== -1) {
+      // If the product exists, update the quantity
+      cartData[existingProductIndex].quantity = quantity;
+    } else {
+      // If the product doesn't exist, add it to the cart
+      cartData.push({ id, quantity });
+    }
+
+    // Store the updated cart data in localStorage
+    localStorage.setItem('cartData', JSON.stringify(cartData));
   };
 
   return (
     <div className={`addToCartButton ${className}`}>
       <div className="priceAboveQuantity">
         <ProductPrice productId={id} />
-        <QuantityControl quantity={quantity} onDecrease={handleDecrease} onIncrease={handleIncrease} />
+        <QuantityControl quantity={quantity} onQuantityChange={handleQuantityChange} />
       </div>
-      <button className="addToCartButton">Add to cart</button>
+      <button className="addToCartButton" onClick={handleAddToCart}>Add to cart</button>
     </div>
   );
 };

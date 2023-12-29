@@ -1,36 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './QuantityControl.css';
 
-const QuantityControl = ({ quantity, onDecrease, onIncrease }) => {
-  const [editableQuantity, setEditableQuantity] = useState(String(quantity));
-
+const QuantityControl = ({ quantity, onQuantityChange }) => {
   const handleQuantityChange = (event) => {
     const newQuantity = event.target.value.replace(/\D/g, ''); // Remove non-digit characters
-    setEditableQuantity(newQuantity);
+    onQuantityChange(newQuantity);
   };
 
   const handleBlur = () => {
     // Update the quantity when the input loses focus
-    const newQuantity = editableQuantity === '' ? '1' : editableQuantity && editableQuantity.replace(/^0+/, '');
-    setEditableQuantity(newQuantity);
+    const newQuantity = quantity === '' ? '1' : String(quantity).replace(/^0+/, '');
+    onQuantityChange(newQuantity);
   };
 
   const handleDecrease = () => {
-    setEditableQuantity((prevQuantity) => {
-      const parsedQuantity = parseInt(prevQuantity);
-      return String(Math.max(1, parsedQuantity - 1));
-    });
+    const parsedQuantity = Math.max(1, parseInt(quantity) - 1);
+    onQuantityChange(String(parsedQuantity));
   };
 
   const handleIncrease = () => {
-    setEditableQuantity((prevQuantity) => {
-      const parsedQuantity = parseInt(prevQuantity);
-      return String(parsedQuantity + 1);
-    });
+    const parsedQuantity = parseInt(quantity) + 1;
+    onQuantityChange(String(parsedQuantity));
   };
 
-  return (<div className="quantityControlWithAmount">
-    <p className='amount'>Amount: </p>
+  return (
+    <div className="quantityControlWithAmount">
+      <p className='amount'>Amount: </p>
       <div className="quantityControl">
         <button onClick={handleDecrease}>-</button>
         <input
@@ -42,7 +37,7 @@ const QuantityControl = ({ quantity, onDecrease, onIncrease }) => {
             background: 'transparent',
             appearance: 'textfield',
           }}
-          value={editableQuantity}
+          value={quantity}
           onChange={handleQuantityChange}
           onBlur={handleBlur}
         />
