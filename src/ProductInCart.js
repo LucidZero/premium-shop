@@ -1,4 +1,3 @@
-// ProductInCart.js
 import React, { useState, useEffect } from 'react';
 import './ProductInCart.css';
 import data from './productData.json';

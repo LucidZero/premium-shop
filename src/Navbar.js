@@ -9,7 +9,9 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="logo-container">
-        <Logo className="logo" />
+        <Link to="/">
+          <Logo className="logo" />
+        </Link>
       </div>
       <div className="navbar-links">
         <Link to="/">Home</Link>
@@ -22,3 +24,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
