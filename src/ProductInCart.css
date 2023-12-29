@@ -51,9 +51,27 @@
   }
 .third-box{
     display: flex;
-    align-items:flex-end;
     margin: auto 1vw 1vw 0;
+    gap: 20%;
+    align-items: center;
   }
+.third-box .price-box{
+  gap: 5%;
+}
+.third-box .price-box .price{
+  margin: 0;
+}
+.third-box .price-box .currency{
+  margin: 0;
+}
+.third-box button{
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 .get-centered{
     display: flex;
     align-items: flex-start;

@@ -37,6 +37,13 @@ const ProductInCart = () => {
     localStorage.setItem('cartData', JSON.stringify(newCartData));
   };
 
+  const handleRemove = (id) => {
+    // Remove the product from cartData and localStorage
+    const newCartData = cartData.filter((cartItem) => cartItem.id !== id);
+    setCartData(newCartData);
+    localStorage.setItem('cartData', JSON.stringify(newCartData));
+  };
+
   const handleCheckout = () => {
     setCheckoutStatus('Processing...');
     setTimeout(() => {
@@ -67,6 +74,7 @@ const ProductInCart = () => {
               </div>
               <div className="third-box">
                 <ProductPrice productId={product.id}/>
+                <button onClick={() => handleRemove(cartItem.id)}>X</button>
               </div>
             </div>
           );
