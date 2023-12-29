@@ -1,3 +1,4 @@
+// ProductInCart.js
 import React, { useState, useEffect } from 'react';
 import './ProductInCart.css';
 import data from './productData.json';
@@ -9,8 +10,8 @@ const ProductInCart = () => {
   const [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || []);
   const [total, setTotal] = useState(0);
 
-  // Update cartData whenever localStorage changes
   useEffect(() => {
+    // Update cartData whenever localStorage changes
     setCartData(JSON.parse(localStorage.getItem('cartData')) || []);
   }, []);
 
@@ -25,6 +26,15 @@ const ProductInCart = () => {
     });
     setTotal(sum);
   }, [products, cartData]);
+
+  const handleQuantityChange = (id, newQuantity) => {
+    // Update the quantity of the product in cartData and localStorage
+    const newCartData = cartData.map((cartItem) => 
+      cartItem.id === id ? { ...cartItem, quantity: newQuantity } : cartItem
+    );
+    setCartData(newCartData);
+    localStorage.setItem('cartData', JSON.stringify(newCartData));
+  };
 
   return (
     <div className='get-centered'>
@@ -42,7 +52,7 @@ const ProductInCart = () => {
                 <h2 className="product-name">{product.name}</h2>
               </div>
               <div className="second-box">
-                <QuantityControl quantity={Number(cartItem.quantity)} onQuantityChange={() => {}} />
+                <QuantityControl id={cartItem.id} quantity={Number(cartItem.quantity)} onQuantityChange={handleQuantityChange} />
               </div>
               <div className="third-box">
                 <ProductPrice productId={product.id}/>
@@ -53,7 +63,7 @@ const ProductInCart = () => {
       </div>
       <div className="checkout">
         <div className="checkout-amount">
-          <p>Total</p> <p>{total}</p>
+          <p>Total</p> <p>{total} euro</p>
         </div>
         <button className="checkout-button">Checkout</button>
       </div>

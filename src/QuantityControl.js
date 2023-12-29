@@ -1,26 +1,21 @@
+// QuantityControl.js
 import React from 'react';
 import './QuantityControl.css';
 
-const QuantityControl = ({ quantity, onQuantityChange }) => {
+const QuantityControl = ({ id, quantity, onQuantityChange }) => {
   const handleQuantityChange = (event) => {
     const newQuantity = event.target.value.replace(/\D/g, ''); // Remove non-digit characters
-    onQuantityChange(newQuantity);
-  };
-
-  const handleBlur = () => {
-    // Update the quantity when the input loses focus
-    const newQuantity = quantity === '' ? '1' : String(quantity).replace(/^0+/, '');
-    onQuantityChange(newQuantity);
+    onQuantityChange(id, newQuantity);
   };
 
   const handleDecrease = () => {
     const parsedQuantity = Math.max(1, parseInt(quantity) - 1);
-    onQuantityChange(String(parsedQuantity));
+    onQuantityChange(id, String(parsedQuantity));
   };
 
   const handleIncrease = () => {
     const parsedQuantity = parseInt(quantity) + 1;
-    onQuantityChange(String(parsedQuantity));
+    onQuantityChange(id, String(parsedQuantity));
   };
 
   return (
@@ -39,7 +34,6 @@ const QuantityControl = ({ quantity, onQuantityChange }) => {
           }}
           value={quantity}
           onChange={handleQuantityChange}
-          onBlur={handleBlur}
         />
         <button onClick={handleIncrease}>+</button>
       </div>

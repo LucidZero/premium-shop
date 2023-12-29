@@ -8,7 +8,7 @@ const AddToCart = ({ className }) => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
 
-  const handleQuantityChange = (newQuantity) => {
+  const handleQuantityChange = (id, newQuantity) => {
     setQuantity(parseInt(newQuantity));
   };
 
@@ -35,7 +35,7 @@ const AddToCart = ({ className }) => {
     <div className={`addToCartButton ${className}`}>
       <div className="priceAboveQuantity">
         <ProductPrice productId={id} />
-        <QuantityControl quantity={quantity} onQuantityChange={handleQuantityChange} />
+        <QuantityControl id={id} quantity={quantity} onQuantityChange={handleQuantityChange} />
       </div>
       <button className="addToCartButton" onClick={handleAddToCart}>Add to cart</button>
     </div>
