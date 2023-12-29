@@ -4,7 +4,7 @@ import Shop from './Shop.js';
 import FrequentlyAskedQuestions from './FrequentlyAskedQuestions.js';
 import Cart from './Cart.js';
 import Product from './Product.js';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
