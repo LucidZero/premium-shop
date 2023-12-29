@@ -1,8 +1,7 @@
 .product-in-cart {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    
+    min-width: 880px;
   }
   
 .product-card-in-cart {
@@ -11,12 +10,12 @@
     /*border: 1px solid #ccc; 
     padding: 10px; */
     background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(176,175,182,0) 20%, rgba(241, 241, 241,1) 28%, rgba(241, 241, 241,1) 32%, rgb(241, 241, 241) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255,1) 28%, rgba(255, 255, 255,1) 32%, rgb(255, 255, 255) 100%);
     margin-bottom: 20px; 
-    box-shadow: 1px 1px 10px 5px #eaeaea;
+    /*box-shadow: 1px 1px 10px 5px #faf9f8;*/
     position: relative;
-
     overflow: hidden;
+    max-width: 880px;
     
   }
   .product-card-in-cart img{
@@ -37,18 +36,18 @@
   }
   
 .product-name {
-    font-size:24px;
+    font-size:1.3rem;
     margin: 0vw 0vw 0vw 1vw;
   }
 .first-box{
     display: flex;
     margin: 1vw 0vw auto 0;
-    min-width: 24vw;
+    min-width: 25%;
   }
 .second-box{
     display: flex;
     align-items:flex-end;
-    margin: auto 1vw 1vw 0;
+    margin: auto 1% 1vw 0;
   }
 .third-box{
     display: flex;
@@ -57,27 +56,29 @@
   }
 .get-centered{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 3vh auto;
     justify-content: center;
+    min-height: 71vh;
   }
 
 .quantityControlWithAmount{
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .checkout{
     height: 14vh;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 20%;
     padding: 1vw 1vw;
-    background-color: aqua;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     z-index: 6;
-    position: fixed;
     right: 10%;
     bottom: 8%;
+    margin-left: 1vw;
+    justify-content: space-between;
 }
 @media (max-width: 1233px) {
   .checkout {
@@ -86,11 +87,24 @@
 }
 
 .checkout p{
-
+  color: #222;
 }
+
+.checkout-amount{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+}
+
 .checkout-button{
-background-color: orange;
+background-color: #222;
 border: none;
-font-size: 3em;
-height: 4em;
+height: 2.2em;
+color: #fff;
+width: 100%;
+font-size: 1.4rem;
+font-family: 'Playfair Display', sans-serif;
+}
+.checkout-button:hover {
+  background-color:#555555;
 }

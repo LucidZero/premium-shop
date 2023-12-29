@@ -20,6 +20,9 @@
     color: #000;
   }
 
+.product-showcase{
+  margin-bottom: 5vh;
+}
 
 @media (max-width: 500px) {
     .product-name {
