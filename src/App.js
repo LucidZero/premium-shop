@@ -7,8 +7,8 @@ import Product from './Product.js';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-  return (
-    <Router>
+  return (     
+    <Router basename="/premium-shop">
       <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -23,4 +23,3 @@ function App() {
 }
 
 export default App;
-

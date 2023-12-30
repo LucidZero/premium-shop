@@ -13,7 +13,7 @@ const HomePage = () => {
           <div className="content">
               <h1>Elevate Your Craftsmanship</h1>
 
-              <a id="visitShop" href="#/premium-shop/Shop">VISIT OUR SHOP</a>
+              <a id="visitShop" href="#/Shop">VISIT OUR SHOP</a>
           </div>
         </div>
         <Footer />
