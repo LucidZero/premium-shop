@@ -7,7 +7,7 @@ import Product from './Product.js';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-  return (
+  return (     
     <Router basename="/premium-shop">
       <div>
         <Routes>
